@@ -1,8 +1,10 @@
-function repeatString(string, times) {
-  if (times < 0) return "";
-  if (times === 1) return string;
-  else return string + repeatStringNumTimes(string, times - 1);
+const repeatString = "🇨🇦";
+const arr = [];
+
+for (let i = 1; i <= 3; i++) {
+  arr.push(repeatString);
 }
-console.log(repeatString("abc", 3));
+
+arr.join("");
 
 module.exports = repeatString;
