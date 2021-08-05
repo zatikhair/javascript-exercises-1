@@ -13,7 +13,7 @@ function reverseString() {
 }
 
 // take input from the user
-const string = prompt("Enter a string: ");
+const string = console.log("Enter a string: ");
 
 const result = reverseString(string);
 console.log(result);
