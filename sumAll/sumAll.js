@@ -1,13 +1,32 @@
-const sumAll = function (a, b, range = []) {
-  if (a < 0 || b < 0) return "ERROR";
-  if (isNaN(a) || isNaN(b)) return "ERROR";
+function sumAll(str) {
+  // A temporary string
+  let temp = "0";
 
-  for (let i = Math.min(a, b); i <= Math.max(a, b); i++) {
-    range.push(i);
+  // holds sum of all numbers
+  // present in the string
+  let sum = 0;
+
+  // read each character in input string
+  for (let i = 0; i < str.length; i++) {
+    let ch = str[i];
+
+    // if current character is a digit
+    if (!isNaN(String(ch) * 1)) temp += ch;
+    // if current character is an alphabet
+    else {
+      // increment sum by number found earlier
+      // (if any)
+      sum += parseInt(temp);
+
+      // reset temporary string to empty
+      temp = "0";
+    }
   }
 
-  return range.reduce((a, b) => a + b);
-};
+  // atoi(temp.c_str()) takes care of trailing
+  // numbers
+  return sum + parseInt(temp);
+}
 
 console.log(sumAll(1, 10));
 console.log(sumAll(10, 1));
