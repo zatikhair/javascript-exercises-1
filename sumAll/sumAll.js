@@ -1,27 +1,23 @@
-function sumAll(arr) {
-  let fullArr = [];
-  let sum = 0;
-  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+var sumAll = function (...numbers) {
+  var num = [...numbers];
 
-  arr.sort(function (a, b) {
-    return a - b;
-  });
+  const negativeNumber = num[0] < 0 || num[1] < 0;
+  const notANumber = typeof num[0] !== "number" || typeof num[1] !== "number";
 
-  for (let i = arr[0]; i <= arr[1]; i++) {
-    fullArr.push(i);
+  if (negativeNumber || notANumber) {
+    return "ERROR";
   }
 
-  sum = fullArr.reduce(reducer);
+  var largerNumber = num[0] > num[1] ? num[0] : num[1];
+  var smallerNumber = num[0] < num[1] ? num[0] : num[1];
 
-  return sum;
-}
+  num = [];
 
-console.log(sumAll(1, 10));
-console.log(sumAll(10, 1));
-console.log(sumAll(-10, 1));
-console.log(sumAll(1, -10));
-console.log(sumAll(1, "a"));
-console.log(sumAll("a", 1));
-console.log(sumAll("a", -1));
+  for (var i = smallerNumber; i <= largerNumber; i++) {
+    num.push(i);
+  }
+
+  return num.reduce((acc, curr) => acc + curr);
+};
 
 module.exports = sumAll;
