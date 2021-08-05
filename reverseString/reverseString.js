@@ -1,4 +1,4 @@
-function reverseString() {
+function reverseString(str) {
   // return a new array of strings
   const arrayStrings = str.split("");
 
