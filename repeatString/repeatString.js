@@ -1,10 +1,12 @@
-const repeatString = "🇨🇦";
-const arr = [];
+var repeatString = function (string, number) {
+  if (number < 0) return "ERROR";
+  let str = [];
+  while (0 < number) {
+    str.push(string);
+    number -= 1;
+  }
 
-for (let i = 1; i <= 3; i++) {
-  arr.push(repeatString);
-}
-
-arr.join("");
+  return str.join("");
+};
 
 module.exports = repeatString;
