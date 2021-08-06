@@ -1,9 +1,7 @@
-const removeFromArray = (array, itemToRemove) => {
-  return array.filter((v) => {
-    return !itemsToRemove.includes(v);
-  });
-};
+const removeFromArray = [0, 1, 2, 3, 4];
 
-removeFromArray([1, 2, 3, 4, 5], [1, 4]);
+[1, 4, 3].reverse().forEach((index) => {
+  items.splice(index, 1);
+});
 
 module.exports = removeFromArray;
