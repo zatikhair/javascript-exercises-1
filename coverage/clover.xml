@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1628348612071" clover="3.2.0">
-  <project timestamp="1628348612071" name="All files">
-    <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1" elements="7" coveredelements="7" complexity="0" loc="6" ncloc="6" packages="1" files="1" classes="1"/>
-    <file name="getTheTitles.js" path="C:\Users\User\Desktop\code\Github\javascript-exercises-1\getTheTitles\getTheTitles.js">
-      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+<coverage generated="1628350118398" clover="3.2.0">
+  <project timestamp="1628350118398" name="All files">
+    <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1" elements="12" coveredelements="12" complexity="0" loc="7" ncloc="7" packages="1" files="1" classes="1"/>
+    <file name="fibonacci.js" path="C:\Users\User\Desktop\code\Github\javascript-exercises-1\fibonacci\fibonacci.js">
+      <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
       <line num="1" count="1" type="stmt"/>
-      <line num="2" count="1" type="stmt"/>
-      <line num="4" count="1" type="stmt"/>
-      <line num="5" count="2" type="stmt"/>
-      <line num="8" count="1" type="stmt"/>
+      <line num="2" count="245041" type="cond" truecount="2" falsecount="0"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="245040" type="cond" truecount="2" falsecount="0"/>
+      <line num="5" count="122524" type="stmt"/>
+      <line num="7" count="122516" type="stmt"/>
       <line num="11" count="1" type="stmt"/>
     </file>
   </project>
