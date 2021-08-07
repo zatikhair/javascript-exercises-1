@@ -1,21 +1,43 @@
-function translate(string) {
-  return string
-    .split(" ")
-    .map((word) => {
-      const index = firstVowelIndex(word);
-      const beginning = word.slice(0, index);
-      const ending = word.slice(index);
-      return `${ending}${beginning}ay`;
-    })
-    .join(" ");
-}
+function pigLatin(str) {
+  let sentence = str.split(" ");
+  let vowels = ["a", "e", "i", "o", "u"];
 
-function firstVowelIndex(string) {
-  const vowels = string.match(/[aeiou]/g);
-  if (vowels[0] == "u" && string[string.indexOf(vowels[0]) - 1] == "q") {
-    return string.indexOf(vowels[1]);
+  for (word in sentence) {
+    let letters = sentence[word].split("");
+    let isVowel = false;
+
+    while (!isVowel) {
+      let lastLetter = letters[letters.length - 1];
+
+      for (char in vowels) {
+        if (letters[0] == vowels[char]) {
+          if (lastLetter != "q") {
+            isVowel = true;
+            letters.push("ay");
+          }
+        }
+      }
+
+      if (!isVowel || lastLetter == "q") {
+        let firstLetter = letters[0];
+        letters.push(firstLetter);
+        letters.splice(0, 1);
+      }
+    }
+
+    sentence[word] = letters.join("");
   }
-  return string.indexOf(vowels[0]);
+
+  // to put spaces back into the sentence
+  let pigSentence = [];
+  for (let i = 0; i < sentence.length; i++) {
+    pigSentence.push(sentence[i]);
+    if (i != sentence.length - 1) {
+      pigSentence.push(" ");
+    }
+  }
+
+  return pigSentence.join("");
 }
 
 module.exports = pigLatin;
