@@ -1,18 +1,15 @@
-const snakeCase = function (str) {
-  str = str.split("..").join(" ");
-  str = str
+let snakeCase = function (string) {
+  string = string.replace(/\.\./g, " ");
+
+  string.indexOf(" ") < 0 ? (string = string.replace(/([A-Z])/g, " $1")) : null;
+
+  return string
+    .trim()
     .toLowerCase()
-    .replace(/[^\w\s-]|_/g, "")
-    .replace(/[\s-]+/g, "_");
-
-  // to remove trailing '_'
-  let lastChar = str[str.length - 1];
-  while (lastChar == "_") {
-    str = str.substring(0, str.length - 1);
-    lastChar = str[str.length - 1];
-  }
-
-  return str;
+    .replace(/[,?.]/g, "")
+    .replace(/\-/g, " ")
+    .split(" ")
+    .join("_");
 };
 
 module.exports = snakeCase;
