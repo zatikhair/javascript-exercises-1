@@ -1,26 +1,42 @@
-const add = function() {
-	
-};
+function add(x, y) {
+  return x + y;
+}
 
-const subtract = function() {
-	
-};
+function subtract(x, y) {
+  return x - y;
+}
 
-const sum = function() {
-	
-};
+function sum(array) {
+  let result = 0;
+  array.forEach(function (number) {
+    result += number;
+  });
+  return result;
+}
 
-const multiply = function() {
+function multiply(array) {
+  let result = array[0];
+  array.shift();
+  array.forEach(function (number) {
+    result *= number;
+  });
+  return result;
+}
 
-};
+function power(x, y) {
+  return x ** y;
+}
 
-const power = function() {
-	
-};
-
-const factorial = function() {
-	
-};
+function factorial(x) {
+  let result = 1;
+  if (x == 0) return 1;
+  else {
+    for (i = x; i > 1; i--) {
+      result *= i;
+    }
+  }
+  return result;
+}
 
 module.exports = {
   add,
@@ -28,5 +44,5 @@ module.exports = {
   sum,
   multiply,
   power,
-  factorial
+  factorial,
 };
